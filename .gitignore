@@ -2,3 +2,4 @@
 *.adif
 
 *.adi
+.ipynb_checkpoints
