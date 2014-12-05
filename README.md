@@ -19,13 +19,25 @@ Getting Started
 You need a working `matplotlib` and `basemap` installation.
 * http://matplotlib.org/basemap/
 * http://matplotlib.org/
-618  pip install matplotlib
-  619  pip freeze
-  620  pip install basemap
-  621  pip install http://matplotlib.org/basemap/#egg=basemap
-  622  pip install git+http://matplotlib.org/basemap/#egg=basemap
-  623  pip install git+https://github.com/matplotlib/basemap.git#egg=basemap
-  624  pip install git+https://github.com/matplotlib/basemap.git#egg=basemap
-  625  pip install git+https://github.com/matplotlib/basemap.git#egg=basemap
-  626  pip install git+https://github.com/matplotlib/basemap.git#egg=basemap
-  627  pip install git+file:///Users/alan/Documents/scm/github/basemap/#egg=basemap
+
+In my new virtualenv, install matplotlib with :
+
+    pip install matplotlib
+
+Then install basemap from:
+
+    pip install git+https://github.com/matplotlib/basemap.git#egg=basemap
+
+At this point your list of installed packages in the virtualenv should be very similar to:
+
+    basemap >=1.0.8
+    matplotlib >=1.4.2
+    mlocs >=1.0.5
+    mock >=1.0.1
+    nose >=1.3.4
+    numpy >=1.9.1
+    pyparsing >=2.0.3
+    python-dateutil >=2.2
+    pytz >=2014.9
+    six >=1.8.0
+    wsgiref >=0.1.2
