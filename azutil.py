@@ -2,15 +2,8 @@
 
 import unittest
 import logging
-while True:
-    try:
-        from mlocs import toLoc
-        break
-    except ImportError as i:
-        from os import system
-        system("pip install mlocs")
-    
 
+from mlocs import toLoc
 
 import gzip
 import base64

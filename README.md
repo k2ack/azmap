@@ -28,6 +28,12 @@ Then install basemap from:
 
     pip install git+https://github.com/matplotlib/basemap.git#egg=basemap
 
+Then install mlocs; the package that provides Maidenhead to lat/lon conversion routines:
+
+    pip install mlocs
+
+
+
 At this point your list of installed packages in the virtualenv should be very similar to:
 
     basemap >=1.0.8
