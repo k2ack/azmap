@@ -1,4 +1,4 @@
-{%- extends 'slides_reveal.tpl' -%}
+{%- extends 'slides_reveal_ah.tpl' -%}
 
 {% block input_group -%}
 <div class="input_hidden">
