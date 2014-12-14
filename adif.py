@@ -36,8 +36,8 @@ class ADIFReader(object):
         ''' In place modify rec to convert from unicode to appropriate types. 
         Also change any common, simple errors - like missing band w freq set, etc.'''
 
-        convert  = { int : [ 'dxcc','cqz','ituz','tx_pwr' ] }
-        defaults = { int : -1 }
+        convert  = { int : [ 'dxcc','cqz','ituz' ], float: ['tx_pwr'] }
+        defaults = { int : -1 , float : -1 }
         
         
         for k in sorted(rec):
@@ -58,6 +58,32 @@ class ADIFReader(object):
                 v = rec[k].lower()
                 if v in tx_pwr_fixes:
                     rec[k] = tx_pwr_fixes[v]
+            elif k == 'gridsquare':
+                v = rec[k].strip()
+                rec[k] = v
+                l = len(v)
+                if l % 2:
+                    # not even length
+                    if l < 2:
+                        logger.info('removing %s with bad length: %s',k,v)
+                        rec.pop(k)
+                    else:
+                        # take only pairs
+                        rec[k] = v[:l/2*2]
+                else:
+                    valid = True
+                    for i,c in enumerate(v):
+                        if not (i/2)%2:
+                            valid = c.isalpha()
+                        else:
+                            valid = c.isdigit()
+                        if not valid:
+                            break
+                    if not valid:
+                        logger.info('removing poorly formed %s: %s',k,v)
+                        rec.pop(k)
+                    
+                    
                     
         for k in convert:
             for field in convert[k]:

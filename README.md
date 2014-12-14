@@ -47,3 +47,9 @@ At this point your list of installed packages in the virtualenv should be very s
     pytz >=2014.9
     six >=1.8.0
     wsgiref >=0.1.2
+
+Slides can be made with:
+
+    ipython nbconvert AzimuthMapExperiment.ipynb --reveal-prefix=../js --to slides --template output_toggle.tpl
+
+Assumption is that when hosted, the reveal.js folder is in ``../js``.
