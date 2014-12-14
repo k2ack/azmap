@@ -39,7 +39,7 @@ def relative_offset_qth(m,qth_o,grid_dest=None,lonlat_dest=None):
     if grid_dest is not None:
         lat_dx,lon_dx = toLoc(grid_dest)
     else:
-        lat_dx, lon_dx = lonlat_dest
+        lon_dx, lat_dx = lonlat_dest
  
     return relative_offset(m,lon_o,lat_o,lon_dx,lat_dx)
     
